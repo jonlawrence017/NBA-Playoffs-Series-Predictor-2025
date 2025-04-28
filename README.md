@@ -28,31 +28,26 @@ NBA-Playoffs_Series-Predictor-2025/
 │   ├── Advanced_Stats_25.pdf              # PDF version of 2024-2025 stats
 │   ├── Advanced_Stats_96-24.csv           # Historical advanced stats (1996-2024, web scraped from nba.com)
 │   ├── Advanced_Stats_96-24.pdf           # PDF version of historical stats
-│   ├── Folder_Description                 # Metadata/description
 │   ├── Playoff_Outcomes.csv               # Historical playoff game outcomes (exported from Sports-Reference.com)
 │   ├── master_playoff_advanced_stats.csv  # Processed historical playoff stats with winners/losers
 │   └── parsed_playoff_outcomes.csv        # Parsed playoff outcomes
 ├── Models/
-│   ├── Folder_Description                 # Metadata/description
 │   ├── NBA_Playoff_NN.h5                  # Trained neural network model
 │   └── scaler.pkl                         # StandardScaler for feature normalization
 ├── Monte_Carlo_Output/
-│   ├── Folder_Description                 # Metadata/description
 │   ├── champion_probabilities_2025_fixed_bracket_series.csv  # Champion probabilities
 │   ├── conf_finals_probabilities_2025_fixed_bracket_series.csv  # Conference finals probabilities
 │   ├── conf_semi_probabilities_2025_fixed_bracket_series.csv    # Conference semifinals probabilities
 │   ├── first_round_probabilities_2025_fixed_bracket_series.csv  # First-round probabilities
 │   └── tableau_nba_playoff_probs_2025.csv  # Tableau-ready probability table
 ├── Run_Code/
-│   ├── (1a)Create_Master_df.ipynb         # Creates master playoff dataset
+│   ├── (1a)Create_Master_DF.ipynb         # Creates master playoff dataset
 │   ├── (1b)Parse_Advanced_Stats_25.ipynb  # Parses 2024-2025 advanced stats
 │   ├── (2)Create_NN.ipynb                 # Trains neural network model and analyzes lower/higher seed winners
 │   ├── (3a)Monte_Carlo.ipynb              # Runs Monte Carlo simulations
-│   ├── (3b)GUI.ipynb                      # Launches prediction GUI
-│   ├── (4)Create_Tableau_Table.ipynb      # Generates Tableau-ready table
-│   └── Folder_Description                 # Metadata/description
+│   ├── (3b)Individual_Playoff_Matchups_GUI.ipynb                      # Launches prediction GUI
+│   └── (4)Create_Tableau_Table.ipynb      # Generates Tableau-ready table
 ├── Visualizations/
-│   ├── Folder_Description                 # Metadata/description
 │   ├── Lower_Seed_Win_Predictions_OffvDef.png  # Plot of lower seed win predictions (OffRtg vs. DefRtg)
 │   ├── Lower_Seed_Win_Predictions_WvPIE.png   # Plot of lower seed win predictions (Wins vs. PIE)
 │   ├── Round_Percentages.png                  # Plot of round-by-round prediction percentages
@@ -99,11 +94,11 @@ To set up the environment:
 
 ## Order of Operations
 The notebooks in the `Run_Code/` folder are prefixed with numbers (1a, 1b, 2, etc.) indicating the recommended execution order:
-1. **(1a)Create_Master_df.ipynb**: Combines historical data to create the master playoff dataset.
+1. **(1a)Create_Master_DF.ipynb**: Combines historical data to create the master playoff dataset.
 2. **(1b)Parse_Advanced_Stats_25.ipynb**: Parses 2024-2025 advanced stats for predictions.
 3. **(2)Create_NN.ipynb**: Trains the neural network model and saves it.
 4. **(3a)Monte_Carlo.ipynb**: Runs Monte Carlo simulations for playoff probabilities.
-5. **(3b)GUI.ipynb**: Launches the Tkinter GUI for game predictions.
+5. **(3b)Individual_Playoff_Matchups_GUI.ipynb**: Launches the Tkinter GUI for game predictions.
 6. **(4)Create_Tableau_Table.ipynb**: Generates a table for Tableau visualizations.
 
 Run each notebook in order, ensuring all inputs are available. Execute notebooks using Jupyter:
@@ -155,7 +150,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs.
   - `Monte_Carlo_Output/conf_finals_probabilities_2025_fixed_bracket_series.csv`: Conference finals probabilities.
   - `Monte_Carlo_Output/champion_probabilities_2025_fixed_bracket_series.csv`: Champion probabilities.
 
-### (3b)GUI.ipynb
+### (3b)Individual_Playoff_Matchups_GUI.ipynb
 - **Purpose**: Launches a Tkinter GUI for users to select teams and view game predictions.
 - **Inputs**:
   - `Models/NBA_Playoff_NN.h5`: Trained neural network model.
