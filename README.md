@@ -1,4 +1,5 @@
- This repository contains a machine learning pipeline to predict NBA playoff game and series outcomes for the 2024-2025 season using a neural network. I built this project to combine my love for NBA basketball and data science, showcasing my skills in Python, machine learning, and visualization. Note: Datasets are not included due to restrictions from NBA.com and Sports-Reference.com; instructions for obtaining them are below.
+# NBA Playoff Predictor
+   This repository contains a machine learning pipeline to predict NBA playoff game and series outcomes for the 2024-2025 season using a neural network. I built this project to combine my love for NBA basketball and data science, showcasing my skills in Python, machine learning, and visualization. Note: Datasets are not included due to restrictions from NBA.com and Sports-Reference.com; instructions for obtaining them are below.
 
  ## Table of Contents
  - [Purpose](#purpose)
