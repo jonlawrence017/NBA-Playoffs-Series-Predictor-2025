@@ -28,16 +28,16 @@ NBA-Playoffs_Series-Predictor-2025/
 │   ├── Advanced_Stats_25.pdf              # PDF version of 2024-2025 stats
 │   ├── Advanced_Stats_96-24.csv           # Historical advanced stats (1996-2024, web scraped from nba.com)
 │   ├── Advanced_Stats_96-24.pdf           # PDF version of historical stats
-│   ├── Folder_Description                 # Metadata/description (optional)
+│   ├── Folder_Description                 # Metadata/description
 │   ├── Playoff_Outcomes.csv               # Historical playoff game outcomes (exported from Sports-Reference.com)
 │   ├── master_playoff_advanced_stats.csv  # Processed historical playoff stats with winners/losers
 │   └── parsed_playoff_outcomes.csv        # Parsed playoff outcomes
 ├── Models/
-│   ├── Folder_Description                 # Metadata/description (optional)
+│   ├── Folder_Description                 # Metadata/description
 │   ├── NBA_Playoff_NN.h5                  # Trained neural network model
 │   └── scaler.pkl                         # StandardScaler for feature normalization
 ├── Monte_Carlo_Output/
-│   ├── Folder_Description                 # Metadata/description (optional)
+│   ├── Folder_Description                 # Metadata/description
 │   ├── champion_probabilities_2025_fixed_bracket_series.csv  # Champion probabilities
 │   ├── conf_finals_probabilities_2025_fixed_bracket_series.csv  # Conference finals probabilities
 │   ├── conf_semi_probabilities_2025_fixed_bracket_series.csv    # Conference semifinals probabilities
@@ -50,17 +50,16 @@ NBA-Playoffs_Series-Predictor-2025/
 │   ├── (3a)Monte_Carlo.ipynb              # Runs Monte Carlo simulations
 │   ├── (3b)GUI.ipynb                      # Launches prediction GUI
 │   ├── (4)Create_Tableau_Table.ipynb      # Generates Tableau-ready table
-│   └── Folder_Description                 # Metadata/description (optional)
+│   └── Folder_Description                 # Metadata/description
 ├── Visualizations/
-│   ├── Folder_Description                 # Metadata/description (optional)
+│   ├── Folder_Description                 # Metadata/description
 │   ├── Lower_Seed_Win_Predictions_OffvDef.png  # Plot of lower seed win predictions (OffRtg vs. DefRtg)
 │   ├── Lower_Seed_Win_Predictions_WvPIE.png   # Plot of lower seed win predictions (Wins vs. PIE)
 │   ├── Round_Percentages.png                  # Plot of round-by-round prediction percentages
 │   ├── higher_Seed_Win_Predictions_OffvDef.png # Plot of higher seed win predictions (OffRtg vs. DefRtg)
 │   └── higher_Seed_Win_Predictions_WvPIE.png  # Plot of higher seed win predictions (Wins vs. PIE)
 ├── README.md
-├── requirements.txt                       # Python package dependencies
-└── LICENSE                                # MIT License (recommended)
+└── requirements.txt                       # Python package dependencies
 ```
 
 ## Prerequisites
@@ -119,20 +118,18 @@ Below is a detailed breakdown of each notebook’s inputs and outputs.
 - **Purpose**: Combines historical playoff outcomes and advanced stats to create a master dataset for training.
 - **Inputs**:
   - `Data/Playoff_Outcomes.csv`: Historical playoff game outcomes (from Sports-Reference.com).
-  - `Data/Advanced_Stats_96-24.csv`: Historical advanced team stats (1996-2024, from nba.com).
+  - `Data/Advanced_Stats_96-24.pdf`: Historical advanced team stats (1996-2024, from nba.com).
 - **Outputs**:
+  - `Data/Advanced_Stats_96-24.csv`: parsed advanced team stats
   - `Data/master_playoff_advanced_stats.csv`: Master dataset with winner/loser stats and features.
   - `Data/parsed_playoff_outcomes.csv`: Parsed playoff outcomes for further processing.
-- **Notes**: Uses `pandas` for data merging and cleaning.
 
 ### (1b)Parse_Advanced_Stats_25.ipynb
 - **Purpose**: Parses 2024-2025 advanced stats from CSV or PDF for predictions.
 - **Inputs**:
-  - `Data/Advanced_Stats_25.csv`: 2024-2025 team advanced stats (from nba.com).
-  - `Data/Advanced_Stats_25.pdf`: PDF version (optional, used if CSV is unavailable).
+  - `Data/Advanced_Stats_25.pdf`: 2024-2025 team advanced stats (web scraped from nba.com).
 - **Outputs**:
-  - Cleaned 2024-2025 stats (may be saved as an intermediate CSV or used in memory).
-- **Notes**: Uses `PyPDF2` for PDF parsing and `pandas` for data cleaning.
+  - `Data/Advanced_Stats_25.csv`: parsed 2024-2025 team advanced stats
 
 ### (2)Create_NN.ipynb
 - **Purpose**: Trains a neural network to predict playoff game outcomes and analyzes lower vs. higher seed winners.
@@ -143,10 +140,8 @@ Below is a detailed breakdown of each notebook’s inputs and outputs.
   - `Models/scaler.pkl`: StandardScaler for feature normalization.
   - `Visualizations/Lower_Seed_Win_Predictions_OffvDef.png`: Scatter plot of lower seed win predictions (OffRtg vs. DefRtg).
   - `Visualizations/Lower_Seed_Win_Predictions_WvPIE.png`: Scatter plot of lower seed win predictions (Wins vs. PIE).
-  - `Visualizations/Round_Percentages.png`: Plot of round-by-round prediction percentages.
   - `Visualizations/higher_Seed_Win_Predictions_OffvDef.png`: Scatter plot of higher seed win predictions (OffRtg vs. DefRtg).
   - `Visualizations/higher_Seed_Win_Predictions_WvPIE.png`: Scatter plot of higher seed win predictions (Wins vs. PIE).
-- **Notes**: Uses `tensorflow` for model training with 5-fold cross-validation, L2 regularization, and dropout. Visualizations help analyze model performance for lower vs. higher seeds.
 
 ### (3a)Monte_Carlo.ipynb
 - **Purpose**: Runs Monte Carlo simulations to estimate playoff bracket probabilities.
@@ -159,7 +154,6 @@ Below is a detailed breakdown of each notebook’s inputs and outputs.
   - `Monte_Carlo_Output/conf_semi_probabilities_2025_fixed_bracket_series.csv`: Conference semifinals probabilities.
   - `Monte_Carlo_Output/conf_finals_probabilities_2025_fixed_bracket_series.csv`: Conference finals probabilities.
   - `Monte_Carlo_Output/champion_probabilities_2025_fixed_bracket_series.csv`: Champion probabilities.
-- **Notes**: Simulates multiple playoff scenarios using the trained model.
 
 ### (3b)GUI.ipynb
 - **Purpose**: Launches a Tkinter GUI for users to select teams and view game predictions.
@@ -169,7 +163,6 @@ Below is a detailed breakdown of each notebook’s inputs and outputs.
   - `Data/Advanced_Stats_25.csv`: 2024-2025 team stats for predictions.
 - **Outputs**:
   - Interactive GUI displaying predicted winner and win probability (no file output).
-- **Notes**: Uses `tkinter` for the GUI and `pandas` for data handling.
 
 ### (4)Create_Tableau_Table.ipynb
 - **Purpose**: Generates a table of playoff probabilities for Tableau visualizations.
@@ -180,7 +173,3 @@ Below is a detailed breakdown of each notebook’s inputs and outputs.
   - `Monte_Carlo_Output/champion_probabilities_2025_fixed_bracket_series.csv`
 - **Outputs**:
   - `Monte_Carlo_Output/tableau_nba_playoff_probs_2025.csv`: Tableau-ready table of probabilities.
-- **Notes**: Aggregates Monte Carlo outputs for visualization in Tableau.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
