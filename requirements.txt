@@ -1,0 +1,9 @@
+matplotlib==3.9.4
+     matplotlib-inline==0.1.7
+     numpy==1.26.4
+     pandas==2.2.3
+     PyPDF2==3.0.1
+     scikit-learn==1.6.1
+     tensorflow==2.10.0
+     tensorflow-estimator==2.10.0
+     tensorflow-io-gcs-filesystem==0.31.0
