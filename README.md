@@ -6,7 +6,7 @@ This repository contains a machine learning pipeline to predict NBA playoff game
 - [Repository Structure](#repository-structure)
 - [Prerequisites](#prerequisites)
 - [Feature Selection](#feature-selection)
-- [Order of Operations](#order-of-operations)
+- [Jupyter Notebooks](#jupyter-notebooks)
 - [Inputs and Outputs](#inputs-and-outputs)
 - [Data Sources](#data-sources)
 - [Visualizations](#visualizations)
@@ -14,8 +14,8 @@ This repository contains a machine learning pipeline to predict NBA playoff game
 - [Usage](#usage)
 
 ## Purpose
-The NBA Playoff Predictor forecasts NBA playoff game and series outcomes using a neural network trained on advanced team statistics. Key features include:
-- A Tkinter GUI for easy game predictions.
+The NBA Playoff Predictor forecasts NBA playoff series outcomes using a neural network trained on advanced team statistics. Key features include:
+- A Tkinter GUI for easy series predictions.
 - Monte Carlo simulations to estimate playoff bracket probabilities (first round, conference semifinals, finals, and champion).
 - Data preprocessing to clean and structure historical (1996-2024) and current (2024-2025) NBA stats.
 - Visualizations comparing lower and higher seed win predictions and statistical relationships to analyze model performance.
@@ -34,13 +34,13 @@ NBA-Playoffs-Series-Predictor-2025/
 │   ├── first_round_probabilities_2025_fixed_bracket_series.csv  # First-round probabilities
 │   └── tableau_nba_playoff_probs_2025.csv  # Tableau-ready probability table
 ├── Run_Code/
-│   ├── (0)Statistical_Analysis.ipynb       # Analyzes correlations for feature selection
-│   ├── (1a)Create_Master_DF.ipynb         # Preprocesses historical data
-│   ├── (1b)Parse_Advanced_Stats_25.ipynb  # Preprocesses 2024-2025 stats
-│   ├── (2)Create_NN.ipynb                 # Trains neural network and generates visualizations
-│   ├── (3a)Monte_Carlo.ipynb              # Runs Monte Carlo simulations
-│   ├── (3b)Individual_Playoff_Matchups_GUI.ipynb  # Launches prediction GUI
-│   └── (4)Create_Tableau_Table.ipynb      # Generates Tableau-ready table
+│   ├── Statistical_Analysis.ipynb       # Analyzes correlations for feature selection
+│   ├── Create_Master_DF.ipynb         # Preprocesses historical data
+│   ├── Parse_Advanced_Stats_25.ipynb  # Preprocesses 2024-2025 stats
+│   ├── Create_NN.ipynb                 # Trains neural network and generates visualizations
+│   ├── Monte_Carlo.ipynb              # Runs Monte Carlo simulations
+│   ├── Individual_Playoff_Matchups_GUI.ipynb  # Launches prediction GUI
+│   └── Create_Tableau_Table.ipynb      # Generates Tableau-ready table
 ├── Visualizations/
 │   ├── Lower_Seed_Win_Predictions_OffvDef.png  # Lower seed win predictions (Offensive vs. Defensive Rating)
 │   ├── Lower_Seed_Win_Predictions_WvPIE.png   # Lower seed win predictions (Wins vs. PIE)
@@ -92,7 +92,7 @@ To set up the environment:
    If the import fails, install Tkinter as described above.
 
 ## Feature Selection
-The features for the neural network were selected through a statistical analysis conducted in `(0)Statistical_Analysis.ipynb`. This analysis examined correlations, statistical significance, and win percentages for various team statistics against playoff series outcomes (Winner_Wins and Series_Margin) from 1996-2024. The process involved:
+The features for the neural network were selected through statistical analysis conducted in `(0)Statistical_Analysis.ipynb`. This analysis examined correlations, statistical significance, and win percentages for various team statistics against playoff series outcomes (Winner_Wins and Series_Margin) from 1996-2024. The process involved:
 - **Correlation Analysis**: Pearson correlation coefficients were calculated for each statistic (e.g., NetRtg, PIE, eFG%) against Winner_Wins and Series_Margin. For Series_Margin, NetRtg showed the highest correlation (r = 0.2543, p < 0.0001), followed by eFG% (r = 0.2293, p < 0.0001) and PIE (r = 0.2274, p < 0.0001), indicating strong predictive power.
 - **Statistical Significance**: Features with p-values < 0.05 were prioritized to ensure statistical reliability. For Series_Margin, 12 features (e.g., NetRtg, PIE, eFG%, Seed) were significant.
 - **Win Percentage Analysis**: The percentage of series won by teams with higher values of each statistic was computed. NetRtg led with 73.66% of series won by the team with the higher value, followed by PIE (73.17%) and Wins (72.44%).
@@ -100,15 +100,14 @@ The features for the neural network were selected through a statistical analysis
 
 This rigorous statistical approach ensured that the neural network was trained on the most relevant and impactful features, enhancing its predictive accuracy.
 
-## Order of Operations
-The notebooks in the `Run_Code/` folder are prefixed with numbers (0, 1a, 1b, etc.) indicating the recommended execution order:
-1. **(0)Statistical_Analysis.ipynb**: Analyzes correlations and win percentages to select features.
-2. **(1a)Create_Master_DF.ipynb**: Preprocesses historical data to create a master dataset.
-3. **(1b)Parse_Advanced_Stats_25.ipynb**: Preprocesses 2024-2025 stats for predictions.
-4. **(2)Create_NN.ipynb**: Trains the neural network and generates visualizations.
-5. **(3a)Monte_Carlo.ipynb**: Runs Monte Carlo simulations for playoff probabilities.
-6. **(3b)Individual_Playoff_Matchups_GUI.ipynb**: Launches the Tkinter GUI for predictions.
-7. **(4)Create_Tableau_Table.ipynb**: Generates a table for Tableau visualizations.
+## Jupyter Notebooks
+**Statistical_Analysis.ipynb**: Analyzes correlations and win percentages to select features.
+**Create_Master_DF.ipynb**: Preprocesses historical data to create a master dataset.
+**Parse_Advanced_Stats_25.ipynb**: Preprocesses 2024-2025 stats for predictions.
+**Create_NN.ipynb**: Trains the neural network and generates visualizations.
+**Monte_Carlo.ipynb**: Runs Monte Carlo simulations for playoff probabilities.
+**Individual_Playoff_Matchups_GUI.ipynb**: Launches the Tkinter GUI for predictions.
+**Create_Tableau_Table.ipynb**: Generates a table for Tableau visualizations.
 
 Run each notebook in order, ensuring all inputs are available. Execute notebooks using Jupyter:
 ```bash
@@ -118,7 +117,7 @@ jupyter notebook Run_Code/<notebook_name>.ipynb
 ## Inputs and Outputs
 Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All input datasets must be obtained manually (see [Data Sources](#data-sources)).
 
-### (0)Statistical_Analysis.ipynb
+### Statistical_Analysis.ipynb
 - **Purpose**: Analyzes correlations and win percentages to select neural network features.
 - **Inputs**:
   - `Data/Master_DF.csv`: Master dataset with historical playoff data.
@@ -127,7 +126,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Visualizations/PIE_vs_series_margin.png`: Scatter plot of PIE difference vs. series margin.
 - **Notes**: Uses `pandas`, `numpy`, `matplotlib`, and `scipy.stats` for analysis. Visualizations are safe to share.
 
-### (1a)Create_Master_DF.ipynb
+### Create_Master_DF.ipynb
 - **Purpose**: Preprocesses historical playoff outcomes and advanced stats.
 - **Inputs**:
   - `Data/Playoff_Outcomes.csv`: Historical playoff game outcomes (exported from Basketball-Reference.com).
@@ -138,7 +137,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Data/Parsed_Playoff_Outcomes.csv`: Parsed playoff outcomes.
 - **Notes**: Uses `PyPDF2` for PDF parsing and `pandas` for data processing. Do not share output datasets publicly.
 
-### (1b)Parse_Advanced_Stats_25.ipynb
+### Parse_Advanced_Stats_25.ipynb
 - **Purpose**: Preprocesses 2024-2025 advanced stats.
 - **Inputs**:
   - `Data/Advanced_Stats_25.pdf`: 2024-2025 team advanced stats (manually copied from NBA.com).
@@ -160,7 +159,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Visualizations/higher_Seed_Win_Predictions_WvPIE.png`: Scatter plot (Wins vs. PIE).
 - **Notes**: Uses `tensorflow` for training with 5-fold cross-validation. Visualizations are safe to share.
 
-### (3a)Monte_Carlo.ipynb
+### Monte_Carlo.ipynb
 - **Purpose**: Runs Monte Carlo simulations for playoff probabilities.
 - **Inputs**:
   - `Models/NBA_Playoff_NN.h5`: Trained model.
@@ -173,7 +172,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Monte_Carlo_Output/champion_probabilities_2025_fixed_bracket_series.csv`: Champion probabilities.
 - **Notes**: Outputs are safe to share, as they are model-generated probabilities.
 
-### (3b)Individual_Playoff_Matchups_GUI.ipynb
+### Individual_Playoff_Matchups_GUI.ipynb
 - **Purpose**: Launches a Tkinter GUI for predictions.
 - **Inputs**:
   - `Models/NBA_Playoff_NN.h5`: Trained model.
@@ -183,7 +182,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - Interactive GUI displaying predicted winner and probability (no file output).
 - **Notes**: Uses `tkinter` for the GUI and `pandas` for data handling.
 
-### (4)Create_Tableau_Table.ipynb
+### Create_Tableau_Table.ipynb
 - **Purpose**: Generates a table for Tableau visualizations.
 - **Inputs**:
   - `Monte_Carlo_Output/first_round_probabilities_2025_fixed_bracket_series.csv`
