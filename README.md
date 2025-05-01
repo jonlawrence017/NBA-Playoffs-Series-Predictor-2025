@@ -33,13 +33,13 @@ NBA-Playoffs-Series-Predictor-2025/
 │   ├── first_round_probabilities_2025_fixed_bracket_series.csv  # First-round probabilities
 │   └── tableau_nba_playoff_probs_2025.csv  # Tableau-ready probability table
 ├── Run_Code/
-│   ├── Statistical_Analysis.ipynb       # Analyzes correlations for feature selection
 │   ├── Create_Master_DF.ipynb         # Preprocesses historical data
-│   ├── Parse_Advanced_Stats_25.ipynb  # Preprocesses 2024-2025 stats
 │   ├── Create_NN.ipynb                 # Trains neural network and generates visualizations
-│   ├── Monte_Carlo.ipynb              # Runs Monte Carlo simulations
+│   ├── Create_Tableau_Table.ipynb      # Generates Tableau-ready table
 │   ├── Individual_Playoff_Matchups_GUI.ipynb  # Launches prediction GUI
-│   └── Create_Tableau_Table.ipynb      # Generates Tableau-ready table
+│   ├── Monte_Carlo.ipynb              # Runs Monte Carlo simulations
+│   ├── Parse_Advanced_Stats_25.ipynb  # Preprocesses 2024-2025 stats
+│   └──  Statistical_Analysis.ipynb       # Analyzes correlations for feature selection
 ├── Visualizations/
 │   ├── Lower_Seed_Win_Predictions_OffvDef.png  # Lower seed win predictions (Offensive vs. Defensive Rating)
 │   ├── Lower_Seed_Win_Predictions_WvPIE.png   # Lower seed win predictions (Wins vs. PIE)
