@@ -110,7 +110,6 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
 - **Outputs**:
   - `Visualizations/netrtg_vs_series_margin.png`: Scatter plot of NetRtg difference vs. series margin.
   - `Visualizations/PIE_vs_series_margin.png`: Scatter plot of PIE difference vs. series margin.
-- **Notes**: Uses `pandas`, `numpy`, `matplotlib`, and `scipy.stats` for analysis. Visualizations are safe to share.
 
 ### Create_Master_DF.ipynb
 - **Purpose**: Preprocesses historical playoff outcomes and advanced stats.
@@ -121,7 +120,6 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Data/Advanced_Stats_96-24.csv`: Parsed historical stats.
   - `Data/Master_DF.csv`: Master dataset with features.
   - `Data/Parsed_Playoff_Outcomes.csv`: Parsed playoff outcomes.
-- **Notes**: Uses `PyPDF2` for PDF parsing and `pandas` for data processing. Do not share output datasets publicly.
 
 ### Parse_Advanced_Stats_25.ipynb
 - **Purpose**: Preprocesses 2024-2025 advanced stats.
@@ -129,7 +127,6 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Data/Advanced_Stats_25.pdf`: 2024-2025 team advanced stats (manually copied from NBA.com).
 - **Outputs**:
   - `Data/Advanced_Stats_25.csv`: Parsed 2024-2025 stats.
-- **Notes**: Uses `PyPDF2` for PDF parsing and `pandas` for data cleaning. Do not share output datasets publicly.
 
 ### Create_NN.ipynb
 - **Purpose**: Trains a neural network and generates visualizations.
@@ -143,7 +140,6 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Visualizations/Round_Percentages.png`: Bar plot of prediction percentages.
   - `Visualizations/higher_Seed_Win_Predictions_OffvDef.png`: Scatter plot (Offensive vs. Defensive Rating).
   - `Visualizations/higher_Seed_Win_Predictions_WvPIE.png`: Scatter plot (Wins vs. PIE).
-- **Notes**: Uses `tensorflow` for training with 5-fold cross-validation. Visualizations are safe to share.
 
 ### Monte_Carlo.ipynb
 - **Purpose**: Runs Monte Carlo simulations for playoff probabilities.
@@ -156,7 +152,6 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Monte_Carlo_Output/conf_semi_probabilities_2025_fixed_bracket_series.csv`: Conference semifinals probabilities.
   - `Monte_Carlo_Output/conf_finals_probabilities_2025_fixed_bracket_series.csv`: Conference finals probabilities.
   - `Monte_Carlo_Output/champion_probabilities_2025_fixed_bracket_series.csv`: Champion probabilities.
-- **Notes**: Outputs are safe to share, as they are model-generated probabilities.
 
 ### Individual_Playoff_Matchups_GUI.ipynb
 - **Purpose**: Launches a Tkinter GUI for predictions.
@@ -166,7 +161,6 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Data/Advanced_Stats_25.csv`: 2024-2025 stats.
 - **Outputs**:
   - Interactive GUI displaying predicted winner and probability (no file output).
-- **Notes**: Uses `tkinter` for the GUI and `pandas` for data handling.
 
 ### Create_Tableau_Table.ipynb
 - **Purpose**: Generates a table for Tableau visualizations.
@@ -177,14 +171,12 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Monte_Carlo_Output/champion_probabilities_2025_fixed_bracket_series.csv`
 - **Outputs**:
   - `Monte_Carlo_Output/tableau_nba_playoff_probs_2025.csv`: Tableau-ready table.
-- **Notes**: Output is safe to share, as it aggregates model-generated probabilities.
 
 ## Data Sources
 Datasets are not included due to restrictions from NBA.com and Sports-Reference.com. To replicate the project, you must obtain the following datasets manually:
 - **Advanced_Stats_25.pdf**: 2024-2025 team advanced stats. Copy and paste data from [NBA.com/stats](https://www.nba.com/stats) into a PDF or CSV, following their rules (stats are for viewing only, not downloading).
 - **Advanced_Stats_96-24.pdf**: Historical advanced team stats (1996-2024). Copy and paste data from [NBA.com/stats](https://www.nba.com/stats) into a PDF or CSV, following their rules.
 - **Playoff_Outcomes.csv**: Historical playoff game outcomes (1996-2024). Export manually from [Basketball-Reference.com](https://www.basketball-reference.com) using the “Share & Export” feature, following their Terms of Service.
-- **Attribution**: Always credit the sources (e.g., “Data sourced from NBA.com” and “Data provided by Basketball-Reference.com”).
 - **Note**: Do not share the datasets or any files created from them publicly, as this violates NBA.com and Sports-Reference.com’s rules. Use datasets only for private analysis and follow all terms.
 
 ## Visualizations
