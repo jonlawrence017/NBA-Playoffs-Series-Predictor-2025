@@ -1,5 +1,5 @@
 # NBA Playoff Predictor
-This repository contains a machine learning pipeline to predict NBA playoff game and series outcomes for the 2024-2025 season using a neural network. I built this project to combine my love for NBA basketball and data science, showcasing my skills in Python, machine learning, and visualization. Note: Datasets are not included due to restrictions from NBA.com and Sports-Reference.com; my method for obtaining them is below.
+This repository contains a machine learning pipeline to predict NBA playoff series outcomes for the 2024-2025 playoffs using a neural network. I built this project to combine my love for NBA basketball and data science, showcasing my skills in Python, machine learning, and visualization. Note: Datasets are not included due to restrictions from NBA.com and Sports-Reference.com; my method for obtaining them is below.
 
 ## Table of Contents
 - [Purpose](#purpose)
@@ -114,7 +114,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
 ### Create_Master_DF.ipynb
 - **Purpose**: Preprocesses historical playoff outcomes and advanced stats.
 - **Inputs**:
-  - `Data/Playoff_Outcomes.csv`: Historical playoff game outcomes (exported from Basketball-Reference.com).
+  - `Data/Playoff_Outcomes.csv`: Historical playoff series outcomes (exported from Basketball-Reference.com).
   - `Data/Advanced_Stats_96-24.pdf`: Historical advanced team stats (1996-2024, manually copied from NBA.com).
 - **Outputs**:
   - `Data/Advanced_Stats_96-24.csv`: Parsed historical stats.
@@ -176,7 +176,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
 Datasets are not included due to restrictions from NBA.com and Sports-Reference.com. To replicate the project, you must obtain the following datasets manually:
 - **Advanced_Stats_25.pdf**: 2024-2025 team advanced stats. Copy and paste data from [NBA.com/stats](https://www.nba.com/stats) into a PDF or CSV, following their rules (stats are for viewing only, not downloading).
 - **Advanced_Stats_96-24.pdf**: Historical advanced team stats (1996-2024). Copy and paste data from [NBA.com/stats](https://www.nba.com/stats) into a PDF or CSV, following their rules.
-- **Playoff_Outcomes.csv**: Historical playoff game outcomes (1996-2024). Export manually from [Basketball-Reference.com](https://www.basketball-reference.com) using the “Share & Export” feature, following their Terms of Service.
+- **Playoff_Outcomes.csv**: Historical playoff series outcomes (1996-2024). Export manually from [Basketball-Reference.com](https://www.basketball-reference.com) using the “Share & Export” feature, following their Terms of Service.
 - **Note**: Do not share the datasets or any files created from them publicly, as this violates NBA.com and Sports-Reference.com’s rules. Use datasets only for private analysis and follow all terms.
 
 ## Visualizations
