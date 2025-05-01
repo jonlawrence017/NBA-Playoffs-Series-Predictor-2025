@@ -7,7 +7,6 @@ This repository contains a machine learning pipeline to predict NBA playoff game
 - [Prerequisites](#prerequisites)
 - [Feature Selection](#feature-selection)
 - [Jupyter Notebooks](#jupyter-notebooks)
-- [Inputs and Outputs](#inputs-and-outputs)
 - [Data Sources](#data-sources)
 - [Visualizations](#visualizations)
 - [Results](#results)
@@ -101,20 +100,7 @@ The features for the neural network were selected through statistical analysis c
 This rigorous statistical approach ensured that the neural network was trained on the most relevant and impactful features, enhancing its predictive accuracy.
 
 ## Jupyter Notebooks
-**Statistical_Analysis.ipynb**: Analyzes correlations and win percentages to select features.
-**Create_Master_DF.ipynb**: Preprocesses historical data to create a master dataset.
-**Parse_Advanced_Stats_25.ipynb**: Preprocesses 2024-2025 stats for predictions.
-**Create_NN.ipynb**: Trains the neural network and generates visualizations.
-**Monte_Carlo.ipynb**: Runs Monte Carlo simulations for playoff probabilities.
-**Individual_Playoff_Matchups_GUI.ipynb**: Launches the Tkinter GUI for predictions.
-**Create_Tableau_Table.ipynb**: Generates a table for Tableau visualizations.
 
-Run each notebook in order, ensuring all inputs are available. Execute notebooks using Jupyter:
-```bash
-jupyter notebook Run_Code/<notebook_name>.ipynb
-```
-
-## Inputs and Outputs
 Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All input datasets must be obtained manually (see [Data Sources](#data-sources)).
 
 ### Statistical_Analysis.ipynb
@@ -145,7 +131,7 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
   - `Data/Advanced_Stats_25.csv`: Parsed 2024-2025 stats.
 - **Notes**: Uses `PyPDF2` for PDF parsing and `pandas` for data cleaning. Do not share output datasets publicly.
 
-### (2)Create_NN.ipynb
+### Create_NN.ipynb
 - **Purpose**: Trains a neural network and generates visualizations.
 - **Inputs**:
   - `Data/Master_DF.csv`: Master dataset for training.
