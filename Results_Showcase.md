@@ -14,20 +14,27 @@ This document highlights key results and visualizations, complementing the techn
 ## Visualizations
 Below are key visualizations created to interpret the model’s predictions and insights, built using Tableau and Python.
 
-### 1. Lower Seed Win Predictions: Offensive vs. Defensive Ratings
-This plot shows the relationship between teams’ offensive and defensive ratings and their predicted win probabilities as lower seeds. Teams with higher offensive ratings and balanced defensive metrics tend to have higher upset potential.
+### Round Percentages (Main Results):
+This visual illustrates each teams chances of advancing past each playoff round, and thus the predicted chance of each team bein champions
+
+![Lower Seed Win Predictions](Visualizations/Round_Percentages.png)
+
+### Lower Seed Win Predictions
+The plots below showcase the models success at predicting lower seed wins (upsets). Each dot represents an individual playoff series in which the model predicts an upset (green = correct prediction, red = incorrect prediction). The purpose of the plots are to try to identify the pattern the model follows in predicting upsets. 
+Note: T1vT2_Off-Def and T2vT1_Off-Def compare the differences between one team's offensive rating vs the other team's defensive rating. T1-T2_W and T1-T2_PIE represents the difference in wins and PIE (Player Impact Efficiency) between the two teams. All four metrics are features in the model.
 
 ![Lower Seed Win Predictions](Visualizations/Lower_Seed_Win_Predictions_OffvDef.png)
 
-### 2. Monte Carlo Simulation: Series Outcome Probabilities
-This visualization illustrates the distribution of series outcomes for a sample 2025 first-round matchup, based on 10,000 Monte Carlo simulations. The plot highlights the probability of each team winning in 4, 5, 6, or 7 games.
+![Lower Seed Win Predictions](Visualizations/Lower_Seed_Win_Predictions_WvPIE.png)
 
-![Monte Carlo Series Outcomes](Visualizations/Monte_Carlo_Series_Probabilities.png)
+### Higher Seed Win Predictions
+The plots below showcase the models success at predicting higher seed wins (non upsets). Each dot represents an individual playoff series in which the model predicts an upset (green = correct prediction, red = incorrect prediction). The purpose of the plots are to try to identify the pattern the model follows in predicting non upsets. 
+Note: T1vT2_Off-Def and T2vT1_Off-Def compare the differences between one team's offensive rating vs the other team's defensive rating. T1-T2_W and T1-T2_PIE represents the difference in wins and PIE (Player Impact Efficiency) between the two teams. All four metrics are features in the model.
 
-### 3. Feature Importance
-This bar chart displays the relative importance of input features (e.g., NetRtg, PIE) in the neural network’s predictions, derived from permutation importance analysis.
+![Higher Seed Win Predictions](Visualizations/Lower_Seed_Win_Predictions_OffvDef.png)
 
-![Feature Importance](Visualizations/Feature_Importance.png)
+![Hiwer Seed Win Predictions](Visualizations/Lower_Seed_Win_Predictions_WvPIE.png)
+
 
 ## Conclusion
 The NBA Playoff Predictor successfully combines machine learning and simulation techniques to forecast playoff outcomes with high accuracy. The visualizations above provide intuitive insights into the model’s predictions, highlighting key factors driving team success. For technical details, see the [README](README.md) or explore the code in `Run_Code`.
