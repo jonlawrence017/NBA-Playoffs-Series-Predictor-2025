@@ -17,7 +17,7 @@ Below are key visualizations created to interpret the model’s predictions and 
 ### Round Percentages (Main Results):
 This visual illustrates each teams chances of advancing past each playoff round, and thus the predicted chance of each team bein champions
 
-![Lower Seed Win Predictions](Visualizations/Round_Percentages.png)
+![Round_Percentages](Visualizations/Round_Percentages.png)
 
 ### Lower Seed Win Predictions
 The plots below showcase the models success at predicting lower seed wins (upsets). Each dot represents an individual playoff series in which the model predicts an upset (green = correct prediction, red = incorrect prediction). The purpose of the plots are to try to identify the pattern the model follows in predicting upsets. 
@@ -31,9 +31,9 @@ Note: T1vT2_Off-Def and T2vT1_Off-Def compare the differences between one team's
 The plots below showcase the models success at predicting higher seed wins (non upsets). Each dot represents an individual playoff series in which the model predicts an upset (green = correct prediction, red = incorrect prediction). The purpose of the plots are to try to identify the pattern the model follows in predicting non upsets. 
 Note: T1vT2_Off-Def and T2vT1_Off-Def compare the differences between one team's offensive rating vs the other team's defensive rating. T1-T2_W and T1-T2_PIE represents the difference in wins and PIE (Player Impact Efficiency) between the two teams. All four metrics are features in the model.
 
-![Higher Seed Win Predictions](Visualizations/Lower_Seed_Win_Predictions_OffvDef.png)
+![Higher Seed Win Predictions](Visualizations/higher_Seed_Win_Predictions_OffvDef.png)
 
-![Hiwer Seed Win Predictions](Visualizations/Lower_Seed_Win_Predictions_WvPIE.png)
+![Higher Seed Win Predictions](Visualizations/higher_Seed_Win_Predictions_WvPIE.png)
 
 
 ## Conclusion
