@@ -1,7 +1,7 @@
 # NBA Playoff Predictor: Results Showcase
 
 ## Overview
-The NBA Playoff Predictor uses machine learning to forecast NBA playoff series outcomes. A TensorFlow neural network, trained on advanced team statistics (e.g., NetRtg, PIE, eFG%) from 1996-2024 seasons, predicts win probabilities for 2025 playoff matchups. Monte Carlo simulations further refine these predictions by modeling thousands of series outcomes. With a test accuracy of 73–74%, the model offers reliable insights into playoff dynamics. This document showcases key results and visualizations, complementing the technical details in the [README](README.md).
+The NBA Playoff Predictor uses machine learning to forecast NBA playoff series outcomes. A neural network, trained on advanced team statistics (e.g., NetRtg, PIE, eFG%) from 1996-2024 seasons, predicts win probabilities for playoff matchups. Monte Carlo simulations were performed for thousands of series for the 2025 playoffs and the result is an estimated percentage for each team advancing to specific round. The end result was a test accuracy of ~74% for individual series outcomes. This document showcases key results and visualizations, complementing the technical details in the [README](README.md).
 
 ## Key Results
 - **Model Performance**: The neural network (`NBA_Playoff_NN.h5`) achieved 73–74% accuracy on historical test data.
