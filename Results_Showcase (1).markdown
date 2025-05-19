@@ -1,11 +1,11 @@
 # NBA Playoff Predictor: Results Showcase
 
 ## Overview
-The NBA Playoff Predictor uses machine learning to forecast NBA playoff series outcomes. A TensorFlow neural network, trained on advanced team statistics (e.g., NetRtg, PIE, eFG%) from 2013–2024 seasons, predicts win probabilities for 2025 playoff matchups. Monte Carlo simulations further refine these predictions by modeling thousands of series outcomes. With a test accuracy of 73–74%, the model offers reliable insights into playoff dynamics. This document showcases key results and visualizations, complementing the technical details in the [README](README.md).
+The NBA Playoff Predictor uses machine learning to forecast NBA playoff series outcomes. A TensorFlow neural network, trained on advanced team statistics (e.g., NetRtg, PIE, eFG%) from 1996-2024 seasons, predicts win probabilities for 2025 playoff matchups. Monte Carlo simulations further refine these predictions by modeling thousands of series outcomes. With a test accuracy of 73–74%, the model offers reliable insights into playoff dynamics. This document showcases key results and visualizations, complementing the technical details in the [README](README.md).
 
 ## Key Results
-- **Model Performance**: The neural network (`NBA_Playoff_NN.h5`) achieved 73–74% accuracy on historical test data, successfully predicting 2025 playoff series outcomes.
-- **2025 Predictions**: Series win probabilities for the 2025 playoffs are detailed in `first_round_probabilities_2025_fixed_bracket_series.csv` and visualized in `Visualizations/2025_Round_Percentages.png`.
+- **Model Performance**: The neural network (`NBA_Playoff_NN.h5`) achieved 73–74% accuracy on historical test data.
+- **2025 Predictions**: Series win probabilities for the 2025 playoffs are shown in `Visualizations/2025_Round_Percentages.png`.
 
 ## Visualizations
 Below are key visualizations, created with Tableau and Python, to interpret the model’s predictions and identify patterns in playoff outcomes. Note: For metrics like PIE (Player Impact Estimate), see the [NBA Stats FAQ](https://www.nba.com/stats/help/faq).
