@@ -91,7 +91,7 @@ To set up the environment:
    If the import fails, install Tkinter as described above.
 
 ## Feature Selection
-The features for the neural network were selected through statistical analysis conducted in `(0)Statistical_Analysis.ipynb`. This analysis examined correlations, statistical significance, and win percentages for various team statistics against playoff series outcomes (Winner_Wins and Series_Margin) from 1996-2024. The process involved:
+The features for the neural network were selected through statistical analysis conducted in `Statistical_Analysis.ipynb`. This analysis examined correlations, statistical significance, and win percentages for various team statistics against playoff series outcomes (Winner_Wins and Series_Margin) from 1996-2024. The process involved:
 - **Correlation Analysis**: Pearson correlation coefficients were calculated for each statistic (e.g., NetRtg, PIE, eFG%) against Winner_Wins and Series_Margin. For Series_Margin, NetRtg showed the highest correlation (r = 0.2543, p < 0.0001), followed by eFG% (r = 0.2293, p < 0.0001) and PIE (r = 0.2274, p < 0.0001), indicating strong predictive power.
 - **Statistical Significance**: Features with p-values < 0.05 were prioritized to ensure statistical reliability. For Series_Margin, 12 features (e.g., NetRtg, PIE, eFG%, Seed) were significant.
 - **Win Percentage Analysis**: The percentage of series won by teams with higher values of each statistic was computed. NetRtg led with 73.66% of series won by the team with the higher value, followed by PIE (73.17%) and Wins (72.44%).
