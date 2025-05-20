@@ -167,7 +167,7 @@ The project includes several visualizations to analyze model performance and sta
 
 
 ## Results
-The neural network, trained on features such as NetRtg, PIE, eFG%, OffRtg, DefRtg, Wins, Losses, and Seed, achieved a testing accuracy of ~74% in predicting NBA playoff series outcomes. This performance demonstrates the model’s ability to capture key statistical relationships in historical data (1996-2024) and apply them to the 2024-2025 season. However, there is room for improvement. Future work includes:
+The neural network, trained on features such as NetRtg, PIE, eFG%, OffRtg, DefRtg, Wins, Losses, and Seed, achieved a testing accuracy of 73.3% in predicting NBA playoff series outcomes. This performance demonstrates the model’s ability to capture key statistical relationships in historical data (1996-2024) and apply them to the 2024-2025 season. However, there is room for improvement. Future work includes:
 - **Increasing Model Complexity**: Enhancing the neural network architecture, such as adding more layers or experimenting with different activation functions, to capture more nuanced patterns in the data.
 - **Incorporating Additional Features**: Including player availability data (e.g., injuries, minutes played by key players) to account for individual contributions and team dynamics, which could improve prediction accuracy.
 
