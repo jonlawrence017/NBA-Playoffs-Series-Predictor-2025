@@ -1,5 +1,5 @@
 # NBA Playoff Predictor
-This repository contains a machine learning pipeline to predict NBA playoff series outcomes for the 2024-2025 playoffs using a neural network. I built this project to combine my love for NBA basketball and data science, showcasing my skills in Python, machine learning, and visualization. Note: Datasets are not included due to restrictions from NBA.com and Sports-Reference.com; my method for obtaining them is below.
+This repository contains a machine learning pipeline to predict NBA playoff series outcomes for the 2024-2025 playoffs using a neural network. To see final results, takeaways, and visualizations please see ![Results_Showcase.md](Results_Showcase.md). I built this project to combine my love for NBA basketball and machine learning, showcasing my skills in Python, neural networks, and visualization. Note: Datasets are not included due to restrictions from NBA.com and Sports-Reference.com; my method for obtaining them is below.
 
 ## Table of Contents
 - [Purpose](#purpose)
@@ -68,27 +68,6 @@ NBA-Playoffs-Series-Predictor-2025/
   - Ubuntu: `sudo apt-get install python3-tk`
   - macOS: Usually pre-installed; if not, install via `brew install python-tk`
   - Windows: Included with Python installer; reinstall Python if missing.
-
-To set up the environment:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/jonlawrence017/NBA-Playoffs-Series-Predictor-2025.git
-   cd NBA-Playoffs-Series-Predictor-2025
-   ```
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Verify Tkinter availability:
-   ```bash
-   python -c "import tkinter"
-   ```
-   If the import fails, install Tkinter as described above.
 
 ## Feature Selection
 The features for the neural network were selected through statistical analysis conducted in `Statistical_Analysis.ipynb`. This analysis examined correlations, statistical significance, and win percentages for various team statistics against playoff series outcomes (Winner_Wins and Series_Margin) from 1996-2024. The process involved:
@@ -174,13 +153,13 @@ Below is a detailed breakdown of each notebook’s inputs and outputs. Note: All
 
 ## Data Sources
 Datasets are not included due to restrictions from NBA.com and Sports-Reference.com. To replicate the project, you must obtain the following datasets manually:
-- **Advanced_Stats_25.pdf**: 2024-2025 team advanced stats. Copy and paste data from [NBA.com/stats](https://www.nba.com/stats) into a PDF or CSV, following their rules (stats are for viewing only, not downloading).
-- **Advanced_Stats_96-24.pdf**: Historical advanced team stats (1996-2024). Copy and paste data from [NBA.com/stats](https://www.nba.com/stats) into a PDF or CSV, following their rules.
-- **Playoff_Outcomes.csv**: Historical playoff series outcomes (1996-2024). Export manually from [Basketball-Reference.com](https://www.basketball-reference.com) using the “Share & Export” feature, following their Terms of Service.
-- **Note**: Do not share the datasets or any files created from them publicly, as this violates NBA.com and Sports-Reference.com’s rules. Use datasets only for private analysis and follow all terms.
+- **Advanced_Stats_25.pdf**: 2024-2025 team advanced stats. Copy and paste data from [NBA.com/stats](https://www.nba.com/stats) into a PDF or CSV.
+- **Advanced_Stats_96-24.pdf**: Historical advanced team stats (1996-2024). Copy and paste data from [NBA.com/stats](https://www.nba.com/stats) into a PDF or CSV.
+- **Playoff_Outcomes.csv**: Historical playoff series outcomes (1996-2024). Export manually from [Basketball-Reference.com](https://www.basketball-reference.com) using the “Share & Export” feature.
+- **Note**: Do not share the datasets publicly, as this violates NBA.com and Sports-Reference.com’s rules.
 
 ## Visualizations
-The project includes several visualizations to analyze model performance and statistical relationships, stored in the `Visualizations/` folder. These are safe to share and include:
+The project includes several visualizations to analyze model performance and statistical relationships, stored in the `Visualizations/` folder:
 - **Lower_Seed_Win_Predictions_OffvDef.png**: Scatter plot of lower seed win predictions based on Offensive vs. Defensive Rating.
 - **Lower_Seed_Win_Predictions_WvPIE.png**: Scatter plot of lower seed win predictions based on Wins vs. PIE.
 - **PIE_vs_series_margin.png**: Scatter plot showing the relationship between PIE difference and series margin.
@@ -189,15 +168,13 @@ The project includes several visualizations to analyze model performance and sta
 - **higher_Seed_Win_Predictions_WvPIE.png**: Scatter plot of higher seed win predictions based on Wins vs. PIE.
 - **netrtg_vs_series_margin.png**: Scatter plot showing the relationship between NetRtg difference and series margin.
 
-These visualizations provide insights into the model’s predictive accuracy and the impact of key statistics on playoff outcomes.
 
 ## Results
-The neural network, trained on features such as NetRtg, PIE, eFG%, OffRtg, DefRtg, Wins, Losses, and Seed, achieved a testing accuracy of approximately 73-74% in predicting NBA playoff series outcomes. This performance demonstrates the model’s ability to capture key statistical relationships in historical data (1996-2024) and apply them to the 2024-2025 season. However, there is room for improvement. Future work includes:
+The neural network, trained on features such as NetRtg, PIE, eFG%, OffRtg, DefRtg, Wins, Losses, and Seed, achieved a testing accuracy of ~74% in predicting NBA playoff series outcomes. This performance demonstrates the model’s ability to capture key statistical relationships in historical data (1996-2024) and apply them to the 2024-2025 season. However, there is room for improvement. Future work includes:
 - **Increasing Model Complexity**: Enhancing the neural network architecture, such as adding more layers or experimenting with different activation functions, to capture more nuanced patterns in the data.
 - **Incorporating Additional Features**: Including player availability data (e.g., injuries, minutes played by key players) to account for individual contributions and team dynamics, which could improve prediction accuracy.
-- **Further Validation**: Conducting additional testing, such as expanding the dataset or using alternative evaluation metrics, to ensure robustness.
 
 These enhancements aim to push the model’s accuracy higher and make it a more reliable tool for playoff predictions.
 
 ## Usage
-This project is a portfolio piece to demonstrate my data science skills and is not for commercial use. Please contact me at jonlawrence00@gmail.com for permission to use, modify, or share the code. To replicate the project, obtain the datasets as described in [Data Sources](#data-sources) and follow the [Order of Operations](#order-of-operations). Do not share any datasets or files derived from NBA.com or Sports-Reference.com without their explicit permission.
+This project is a portfolio piece to demonstrate my data science skills and is not for commercial use. Please contact me at jonlawrence00@gmail.com for permission to use, modify, or share the code. To replicate the project, obtain the datasets as described in [Data Sources](#data-sources). Do not share any datasets or files derived from NBA.com or Sports-Reference.com without their explicit permission.
