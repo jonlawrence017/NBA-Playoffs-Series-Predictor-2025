@@ -64,10 +64,7 @@ NBA-Playoffs-Series-Predictor-2025/
   - tensorflow==2.10.0
   - tensorflow-estimator==2.10.0
   - tensorflow-io-gcs-filesystem==0.31.0
-- **Additional Dependency**: Tkinter (required for the GUI, typically included with Python). If missing, install it:
-  - Ubuntu: `sudo apt-get install python3-tk`
-  - macOS: Usually pre-installed; if not, install via `brew install python-tk`
-  - Windows: Included with Python installer; reinstall Python if missing.
+- **Additional Dependency**: Tkinter (required for the GUI, typically included with Python).
 
 ## Feature Selection
 The features for the neural network were selected through statistical analysis conducted in `Statistical_Analysis.ipynb`. This analysis examined correlations, statistical significance, and win percentages for various team statistics against playoff series outcomes (Winner_Wins and Series_Margin) from 1996-2024. The process involved:
