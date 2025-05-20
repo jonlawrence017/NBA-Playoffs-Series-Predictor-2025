@@ -1,7 +1,7 @@
 # NBA Playoff Predictor: Results Showcase
 
 ## Overview
-The NBA Playoff Predictor leverages machine learning to forecast NBA playoff series outcomes. A TensorFlow neural network, trained on advanced team statistics (e.g., NetRtg, PIE, eFG%) from the 1996–2024 seasons, predicts win probabilities for 2025 playoff matchups. Monte Carlo simulations, run thousands of times per series, estimate each team’s probability of advancing through each playoff round. The model achieves ~74% accuracy for individual series outcomes on historical test data. This document highlights key results and visualizations, complementing the technical details in the [README](README.md).
+The NBA Playoff Predictor leverages machine learning to forecast NBA playoff series outcomes. A TensorFlow neural network, trained on advanced team statistics (e.g., NetRtg, PIE, eFG%) from the 1996–2024 seasons, predicts win probabilities for 2025 playoff matchups. Monte Carlo simulations, run thousands of times per series, estimate each team’s probability of advancing through each playoff round. The model achieves 73.3% accuracy for individual series outcomes on historical test data. This document highlights key results and visualizations, complementing the technical details in the [README](README.md).
 
 ## Visualizations
 Below are key visualizations, created with Tableau and Python, to interpret the model’s predictions and explore patterns in playoff outcomes. 
@@ -42,4 +42,4 @@ These scatter plots evaluate the model’s success in predicting non-upsets (hig
 **Takeaways**: The model performs strongly when differences in wins and PIE are large, with incorrect predictions (red dots) clustering near the origin (small differences). This confirms that higher seeds with significant statistical advantages are more predictable winners.
 
 ## Conclusion
-The NBA Playoff Predictor achieves robust playoff forecasts (~74% accuracy) using advanced stats from 1996–2024 and Monte Carlo simulations. Visualizations highlight the model’s strength in predicting higher seed wins with large performance gaps, while upset predictions remain less patterned.
+The NBA Playoff Predictor achieves robust playoff forecasts (73.3% accuracy) using advanced stats from 1996–2024 and Monte Carlo simulations. Visualizations highlight the model’s strength in predicting higher seed wins with large performance gaps, while upset predictions remain less patterned.
