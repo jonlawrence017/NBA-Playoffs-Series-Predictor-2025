@@ -6,6 +6,7 @@ This repository contains a machine learning pipeline to predict NBA playoff seri
 - [Repository Structure](#repository-structure)
 - [Prerequisites](#prerequisites)
 - [Feature Selection](#feature-selection)
+- [Neural Network Architecture](#Neural-Network-Architecture)
 - [Jupyter Notebooks](#jupyter-notebooks)
 - [Data Sources](#data-sources)
 - [Visualizations](#visualizations)
@@ -74,6 +75,14 @@ The features for the neural network were selected through statistical analysis c
 - **Feature Selection Outcome**: Based on high correlations, statistical significance, and win percentages, the key features selected for the neural network included NetRtg, PIE, eFG%, OffRtg, DefRtg, Wins, Losses, and Seed. These features capture offensive and defensive efficiency, overall team performance, and playoff seeding, which are critical for predicting series outcomes.
 
 This rigorous statistical approach ensured that the neural network was trained on the most relevant and impactful features, enhancing its predictive accuracy.
+
+## Neural Network Architecture
+The neural network, implemented in Create_NN.ipynb, is a sequential model built using TensorFlow/Keras, designed to predict NBA playoff series outcomes (binary classification: Team 1 or Team 2 wins). The architecture is as follows:
+- Input Layer: Accepts 8 features (T1-T2_W, T1-T2_PIE, T1-T2_eFG%, T1-T2_OREB%, T1-T2_DREB%, T1-T2_TS%, T1vT2_Off-Def, T2vT1_Off-Def).
+- Hidden Layer 1: 32 neurons with ReLU activation, L2 regularization (0.1) to prevent overfitting, followed by BatchNormalization for stabilized training and a Dropout layer (0.7) to reduce overfitting.
+- Hidden Layer 2: 16 neurons with ReLU activation and L2 regularization (0.1).
+- Output Layer: 1 neuron with sigmoid activation for binary classification (probability of Team 2 winning).
+Optimizer and Loss: Compiled with the Adam optimizer and binary cross-entropy loss, with accuracy as the evaluation metric.
 
 ## Jupyter Notebooks
 
