@@ -82,6 +82,7 @@ The neural network, implemented in Create_NN.ipynb, is a sequential model built 
 - Hidden Layer 1: 32 neurons with ReLU activation, L2 regularization (0.1) to prevent overfitting, followed by BatchNormalization for stabilized training and a Dropout layer (0.7) to reduce overfitting.
 - Hidden Layer 2: 16 neurons with ReLU activation and L2 regularization (0.1).
 - Output Layer: 1 neuron with sigmoid activation for binary classification (probability of Team 2 winning).
+
 Optimizer and Loss: Compiled with the Adam optimizer and binary cross-entropy loss, with accuracy as the evaluation metric.
 Note: I hope to increase model complexity and features in the future.
 
